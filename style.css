@@ -1,0 +1,70 @@
+/* =========================
+   THEME TOKENS & RESETS
+   ========================= */
+:root{--bg:#0b1116;--card:#121a22;--ink:#e9eef2;--muted:#aeb7c0;--accent:#7fc0ff;--hover-column-band:rgba(0,0,0,0.08)}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a,a:visited{color:orange}
+h1{margin:0 0 8px;font-weight:700}
+p,ul,li{color:var(--muted)}
+header,footer{max-width:1200px;margin:24px auto;padding:0 16px}
+footer{padding-bottom:2rem}
+.text-sm{font-size:.8em}
+.updateDate{color:yellow}
+/* =========================
+   LAYOUT GRID & CARDS
+   ========================= */
+.grid{max-width:1200px;margin:0 auto 40px;padding:0 16px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.card{grid-column:span 12;background:var(--card);border:1px solid #1e2933;border-radius:16px;padding:16px 16px 8px;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.card h2{margin:0 0 8px;font-size:18px;font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr;gap:16px}
+.table-card h3{margin:0 0 8px;font-weight:600;color:var(--ink)}
+@media (min-width:900px){.card:nth-child(1),.card:nth-child(2){grid-column:span 12}.card:nth-child(3){grid-column:span 12}.card:nth-child(4){grid-column:span 12}.card:nth-child(5){grid-column:span 12}.two-col{grid-template-columns:1fr 1fr}}
+/* =========================
+   CHART AREAS & MISC
+   ========================= */
+#chart1,#chart2,#chart3,#chart4,#chart5{height:420px}
+#backToTop{cursor:pointer}
+.ywrap{white-space:normal;width:57px;display:inline-block;line-height:1.15;color:#fff;font-size:.75rem}
+#sources{margin-bottom:3rem}
+/* =========================
+   TABLES (BASE)
+   ========================= */
+table{font-size:.75em}
+.afl-table{width:100%;border-collapse:collapse;background:#0e161d;border:1px solid #1e2933;border-radius:12px;overflow:hidden}
+.afl-table thead th{text-align:left;padding:10px 12px;background:#12202b;color:var(--ink);font-weight:600;border-bottom:1px solid #223141}
+.afl-table tbody td{padding:10px 12px;color:var(--ink);border-bottom:1px solid #182430}
+.afl-table tbody tr:last-child td{border-bottom:none}
+.afl-table td.num{text-align:right;font-variant-numeric:tabular-nums}
+/* =========================
+   TABLES (HOVERS & VARIANTS)
+   ========================= */
+#tblPremiersCount tbody tr:hover,#tblRunnersUpCount tbody tr:hover{background-color:#131d26}
+.row-labor{background:rgba(211,47,47,.12)}        /* Labor */
+.row-coalition{background:rgba(25,118,210,.12)}   /* Coalition */
+.afl-table tbody tr.row-labor:hover{background-color:rgba(220,53,69,.35)}
+.afl-table tbody tr.row-coalition:hover{background-color:rgba(0,123,255,.35)}
+/* =========================
+   COLLAPSIBLE TABLES
+   ========================= */
+.collapsible-table.collapsed tbody tr.extra{display:none}
+/* =========================
+   CONTROLS (GROUP & SEGMENTED)
+   ========================= */
+.group-controls{margin-top:8px;display:flex;justify-content:flex-end}
+.group-controls .btn-toggle{border:1px solid #2b3b4a;background:#16212b;color:var(--ink);padding:6px 10px;border-radius:8px;cursor:pointer}
+.group-controls .btn-toggle:hover{background:#1b2935}
+.segmented-controls{display:flex;gap:8px;margin-bottom:8px}
+.segmented-controls .seg{border:1px solid #2b3b4a;background:#16212b;color:var(--ink);padding:6px 12px;border-radius:8px;cursor:pointer;transition:background-color .15s ease,border-color .15s ease,opacity .15s ease}
+.segmented-controls .seg.active{background:#1f2c38;border-color:#3a546b}
+.segmented-controls .seg:not(.active){opacity:.7}
+.segmented-controls .seg:focus{outline:2px solid #3a546b;outline-offset:2px}
+/* =========================
+   HIGHCHARTS (DARK THEME)
+   ========================= */
+.highcharts-background{fill:transparent}
+.highcharts-title,.highcharts-subtitle,.highcharts-axis-title,.highcharts-axis-labels text{fill:var(--ink)!important}
+.highcharts-legend-item text{fill:var(--ink)!important}
+.highcharts-grid-line{stroke:#24313d}
+.highcharts-tick{stroke:#24313d}

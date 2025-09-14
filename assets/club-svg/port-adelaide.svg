@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+<path fill="#008080" d="M0,0h48v20H0z" />
+<path fill="black" d="M0,20h48v28H0z" />
+<path fill="white" d="M10,20h9v28H10zM29,20h9v28H29z" />
+</svg>

@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-56C3Y1EV22"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-56C3Y1EV22');
+  </script>  
+  <meta charset="utf-8" />
+  <title>AFL Grand Finals, Victorian Governments and Religion (1982 to current)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/dumbbell.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>AFL Grand Finals vs Victorian Government (1982 to current)</h1>
+    <p>
+      Background bands show which party formed the <strong>Victorian Government</strong> on each Grand Final date.  
+      Charts exclude the 2010 draw (replay handled as a separate GF).
+    </p>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+        <h2>About</h2>
+        <p>These charts and table data show information around AFL grand finals from 1982 to current.</p>
+        <p>Last Updated: <span class="updateDate">14 September 2025</span></p>
+        <p>This was created to look at scores, games and results of grand finals in line with:
+            <ul>
+                <li>The expansion of the then VFL into other states and then a national competition, the AFL.</li>
+                <li>When did teams outside of Victoria start playing and also win the grand final.</li>
+                <li>What Victorian political party was in government when the grand final took place.</li>
+                <li>Who the Premier was at the time of the grand final and who they support (if known).</li>
+                <li>If there was any obvious alignment of:
+                    <ul>
+                        <li>Political party to scores.</li>
+                        <li>Political party to religious sect (club) location.</li>
+                    </ul>
+                </li>
+                <li>Any other information of interest.</li>
+            </ul>
+        </p>
+        <p>This data is updated infrequently.</p>
+        
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#behinds">Behinds</a></li>
+            <li><a href="#totals">Total Scores</a></li>
+            <li><a href="#dumbbell">Comparison of Scores</a></li>
+            <li><a href="#appearances">Victorian vs Non-Victorian Appearances</a></li>
+            <li><a href="#cumulative">Cumulative Appearances</a></li>
+            <li><a href="#vicpremiers">Victorian Premiers and Premierships</a></li>
+            <li><a href="#religions">Religion by Census</a></li>
+            <li><a href="#overtime">AFL Membership as a Religion</a></li>
+            <li><a href="#september">One Day in September</a></li>
+            <li><a href="#monthsplit">Grand Finals by Month</a></li>
+            <li><a href="#interest">Items of Interest</a></li>
+            <li><a href="#sources">Sources</a></li>
+        </ul>
+    </section>
+
+    <section class="card" id="goals">
+      <h2>Chart 1: Goals (Premiers vs Runners-up)</h2>
+      <p>This chart shows the number of goals scored by both teams in the grand final from 1982 to current.</p>
+      <div id="chart1"></div>
+      <p>In most instances, the Grand Final Premier (P) kicks more goals than the Runner-up. Small exceptions include:</p>
+      <ul>
+        <li>1989 - Both Hawthorn (P) and Geelong kicked 21 each.</li>
+        <li>2006 - Both West Coast (P) and Sydney kicked 12 each.</li>
+        <li>2010 (Draw) - This match's final score was a draw between Collingwood and St Kilda.</li>
+        <li>2018 - Both West Coast (P) and Collingwood kicked 11 each.</li>
+        <li>2023 - Brisbane kicked 13 goals, one more goal than Collingwood (P).</li>
+      </ul>
+    </section>
+
+    <section id="grp-goals" class="card two-col">
+        <div class="table-card">    
+        <h3>Table 1: Goals By Premiers</h3>
+        <table id="tblTopWinnerGoals" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Premiers</th>
+            <th>Goals</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="table-card">
+        <h3>Table 2: By Runners-up</h3>
+        <table id="tblTopLoserGoals" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Runners-up</th>
+            <th>Goals</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+    </section>
+
+    <section class="card" id="behinds">
+      <h2>Chart 2: Behinds/Points (Premiers vs Runners-up)</h2>
+      <div id="chart2"></div>
+      <p>This chart shows the number of behinds scored by both teams in the grand final from 1982 to current.</p>
+      <p>To note:</p>
+      <ul>
+        <li>1994 - West Coast kicks the most behinds as Premiers under a Coalition government.</li>
+        <li>2008 - Geelong kicks the most behinds as Runners-up under a Labor government.</li>
+        <li>Premiers are inclined to kick more behinds under a Labor government.</li>
+      </ul>
+    </section>
+
+    <section id="grp-behinds" class="card two-col">
+    <div class="table-card">
+        <h3>Table 3: Behinds by Premiers</h3>
+        <table id="tblTopWinnerBehinds" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Premiers</th>
+            <th>Behinds</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="table-card">
+        <h3>Table 4: Behinds by Runners-up</h3>
+        <table id="tblTopLoserBehinds" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Runners-up</th>
+            <th>Behinds</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+    </section>
+
+    <section class="card" id="totals">
+      <h2>Chart 3: Total Scores (Premiers vs Runners-up)</h2>
+      <div id="chart3"></div>
+      <p>This chart shows the total scores by both teams in the grand final from 1982 to current.</p>
+      <p>To note:</p>
+      <ul>
+        <li>Seven (7) of the top 10 scores by the Premier were under a Labor government.</li>
+        <li>Seven (7) of the top 10 scores by the Runner-up were under a Labor government.</li>
+        <li>1985 - Essendon has the highest Premier score of 170 under a Labor government.</li>
+        <li>1989 - Geelong has the highest Runner-up score of 138 under a Labor government.</li>
+      </ul>
+    </section>
+
+    <section id="grp-scores" class="card two-col">
+    <div class="table-card">
+        <h3>Table 5: Top Total Scores - Premiers</h3>
+        <table id="tblTopWinnerScores" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Premiers</th>
+            <th>Score</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="table-card">
+        <h3>Table 6: Top Total Scores - Runners-up</h3>
+        <table id="tblTopLoserScores" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Runners-up</th>
+            <th>Score</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+    </section>
+
+    <section class="card" id="dumbbell">
+      <h2>Chart 4: Comparison of Total Scores</h2>
+      <div id="chart4"></div>
+      <p>This chart shows the total scores and their difference in a dumbbell chart. Larger visual gaps represent a larger winning margin.</p>
+      <p>To note:</p>
+      <ul>
+        <li>Only two (2) of the 10 games with the closest scores in this timeframe are during a Coalition government.</li>
+        <li>The five (5) biggest differences in score happened under Labor governments.</li>
+        <li>2010 - The only draw (marked in yellow) in this timeframe happened under a Labor government.</li>
+        <li>2010 - The The only draw (marked in yellow) in this timeframe had only Victorian teams.</li>
+      </ul>
+    </section>
+
+    <section id="grp-margins" class="card two-col">
+    <div class="table-card">
+        <h3>Table 7: Top Closest Scores</h3>
+        <table id="tblClosestMargins" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Premier</th>
+            <th>Runner-up</th>
+            <th>Difference</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="table-card">
+        <h3>Table 8: Top Biggest Score Differences</h3>
+        <table id="tblBiggestMargins" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Premier</th>
+            <th>Runner-up</th>
+            <th>Difference</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+    </section>
+
+    <section class="card" id="appearances">
+      <h2>Chart 5: Victorian vs Non-Victorian Appearances</h2>
+      <div id="chart5"></div>
+      <p>To note:</p>
+      <ul>
+        <li>1991 - The first grand final appearance from a Non-Victorian club was under a Labor government.</li>
+        <li>1991 - The first grand final runner-up from a Non-Victorian club was under a Labor government.</li>
+        <li>1992 - The first grand final premier from a Non-Victorian club was under a Labor government.</li>
+        <li>1997 & 1998 - The first back-to-back Non-Victorian clubs to win the grand final were under a Coalition government.</li>
+        <li>2001 to 2006 - Six (6) back-to-back Non-Victorian clubs won the grand final in a row were all under a Labor government.</li>
+
+      </ul>
+    </section>
+
+    <section id="grp-nonvic" class="card two-col">
+    <div class="table-card">
+        <h3>Table 9: Non-Victorian Premiers</h3>
+        <table id="tblPremiersNonVIC" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Premiers</th>
+            <th>State</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="table-card">
+        <h3>Table 10: Non-Victorian Runners-Up</h3>
+        <table id="tblRunnersNonVIC" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Runners-Up</th>
+            <th>State</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+    </div>
+    </section>
+
+    <section class="card" id="cumulative">
+        <h3>Chart 6: Cumulative VIC vs Non-VIC Totals — Premiers, Runners-Up, Entrants</h3>
+        <div id="chart6" class="hc"></div>
+        <p>This chart shows the cumulative number of Premiers, Runners-Up and Entrants, by whether they are a Victorian club, Non-Victorian club, and overall entrants in the grand final.</p>
+        <p>To note:</p>
+        <ul>
+            <li>This cumulative charts starts at zero relevant to the starting time of 1982.</li>
+            <li>By default, the Entrants (VIC) is disabled as it skews the other line items. You can click on the label in the legend to enable/disable.</li>
+        </ul>        
+    </section>
+
+    <section class="card" id="vicpremiers">
+        <h2>Chart 7: Premiers and Premierships</h2>
+        <div id="chart7" class="hc"></div>
+        <p>This chart shows who the Premier of Victoria was at the time of the grand final, and who they support (if known). This is then presented with the AFL Premiers and Runners-up of the respective years.</p>
+        <p>Changes to football club supporting during a continuous party in government shows a change of Victorian Premier, not a change of allegiance to a football club.</p>
+        <p>To note:</p>
+        <ul>
+            <li>When a Premier was in office:
+                <ul>
+                    <li>1990 - Premier Joan Kirner (Essendon supporter), Essendon was the AFL Runner-up.</li>
+                    <li>2010 (Draw) - Premier John Brumby (Collingwood supporter), Collingwood and St Kilda ended in a draw.</li>
+                    <li>2010 (Replay) - Premier John Brumby (Collingwood supporter), Collingwood was the AFL Premier.</li>
+                    <li>2011 - Premier Ted Baillieu (Geelong supporter), Geelong was the AFL Premier.</li>
+                </ul>
+            </li>
+            <li>Once a Premier left office:
+                <ul>
+                    <li>1993 - Essendon won the grand final after Joan Kirner (Essendon supporter) was defeated in the 1992 election.</li>
+                    <li>2007 - Geelong won the grand final after Steve Bracks (Geelong supporter) retired from politics in July 2007.</li>
+                    <li>2011 - Collingwood was the runner-up after Steve Brumby (Collingwood supporter) was defeated in the 2010 election.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="card two-col" id="premsruns">
+        <div class="table-card">
+            <h3>Table 11: Premiers Count</h3>
+            <table id="tblPremiersCount" class="afl-table">
+                <thead>
+                    <tr><th>Total</th><th>Team</th><th>Years</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="table-card">
+            <h3>Table 12: Runners-up Count</h3>
+            <table id="tblRunnersUpCount" class="afl-table">
+            <thead>
+                <tr><th>Total</th><th>Team</th><th>Years</th></tr>
+            </thead>
+            <tbody></tbody>
+            </table>            
+        </div>        
+    </section>
+
+    <section class="card two-col" id="premsruns">
+        <div class="table-card">
+            <h3>Table 13: Premiers Count by Labor</h3>
+            <table id="tblPremiersCountLabor" class="afl-table">
+            <thead>
+                <tr><th>Total</th><th>Team</th><th>Years</th></tr>
+            </thead>
+            <tbody></tbody>
+            </table>            
+        </div>
+        <div class="table-card">
+            <h3>Table 14: Premiers Count by Liberal/Coalition</h3>
+            <table id="tblPremiersCountCoalition" class="afl-table">
+            <thead>
+                <tr><th>Total</th><th>Team</th><th>Years</th></tr>
+            </thead>
+            <tbody></tbody>
+            </table>            
+        </div>        
+    </section>
+
+    <section class="card two-col" id="premsruns">
+        <div class="table-card">
+            <h3>Table 15: Runners-up Count by Labor</h3>
+            <table id="tblRunnersUpCountLabor" class="afl-table">
+            <thead>
+                <tr><th>Total</th><th>Team</th><th>Years</th></tr>
+            </thead>
+            <tbody></tbody>
+            </table>            
+        </div>
+        <div class="table-card">
+            <h3>Table 16: Runners-up Count by Liberal/Coalition</h3>
+            <table id="tblRunnersUpCountCoalition" class="afl-table">
+            <thead>
+                <tr><th>Total</th><th>Team</th><th>Years</th></tr>
+            </thead>
+            <tbody></tbody>
+            </table>            
+        </div>        
+    </section>
+
+    <section class="card" id="religions">
+        <h3>Religion by Census - Top 10 plus AFL memberships</h3>
+        <div class="flex items-center gap-2">
+            <label for="censusYearSelect">Census year:</label>
+            <select id="censusYearSelect"></select>
+            <div class="text-sm">(“No religion” and “Not stated” hidden by default)</div>
+            <div class="flex items-center gap-4" style="margin-top:8px; margin-bottom:8px;">
+                <label><input type="checkbox" id="toggleNoReligion" /> Show "No religion" data</label>
+                <label><input type="checkbox" id="toggleNotStated" /> Show "Not stated" data</label>
+            </div>
+        </div>
+
+        <div class="card two-col">
+            <div class="table-card"> 
+                <h4>Chart 8: Victoria</h4>
+                <div id="chartRelVic" class="hc"></div>
+            </div>
+            <div class="table-card">
+                <h4>Chart 9: Australia</h4>
+                <div id="chartRelAus" class="hc"></div>
+            </div>
+        </div>
+        <p>This information is based on Census data for the years listed and VFL/AFL memberships for the relevant year, compared by numbers.</p>
+        <ul>
+            <li>Victorian based VFL/AFL club memberships are counted towards Victoria.</li>
+            <li>All VFL/AFL club memberships are counted towards Australia.</li>
+            <li>While members of Victorian based clubs may live outside of Victoria, these form only a small number of members.</li>
+        </ul>
+        <p>To note:</p>
+        <ul>
+            <li>Religion names are provided from the Census. This may vary between the years taken and changes made by the Australian Bureau of Statistics (ABS).
+                <ul>
+                    <li>n.e.i - not elsewhere included.</li>
+                    <li>nfd - not further defined.</li>
+                </ul>
+            </li>
+            <li>There is no available information breaking religion down by state for Victoria in the 1986 census.</li>
+            <li>This was used to measure against identifiable and recorded publicly available data.</li>
+            <li>Not everyone would consider AFL a religion, many would.</li>
+            <li>Many would be an AFL member and also have a religion, they would not be mutually exclusive.</li>        
+    </section>
+
+    <section class="card" id="overtime">
+        <h3>Chart 10: AFL memberships relative to identifying religion in the Australian census</h3>
+        <div id="chartRelRank" class="hc"></div>
+        <p>This information is based on Census data for the years listed and VFL/AFL memberships for the relevant year, compared by numbers.</p>
+        <p>To note:</p>
+        <ul>
+            <li>There is no available information breaking religion down by state for Victoria in the 1986 census.</li>
+            <li>This was used to measure against identifiable and recorded publicly available data.</li>
+            <li>Not everyone would consider AFL a religion, many would.</li>
+            <li>Many would be an AFL member and also have a religion, they would not be mutually exclusive.</li>
+        </ul>
+    </section>
+
+    <section class="card" id="monthsplit">
+        <h3>Chart 11: Grand Finals by Month</h3>
+        <div id="chart12" class="hc"></div>
+        <p>This chart shows that in more than 80% of grand finals in this timeframe are played in September.</p>
+        <p>This information is framed around a traditional grand final in September, usually played on the last Saturday in September.</p>
+        <p>This is immortalised in the song by Mike Brady, released in 1980: "One Day in September". Of the two grand finals not covered in this data but relative to song release, both were the last Saturday of September in their respective years:</p>
+        <ul>
+            <li>1980 - 27 September 1980.</li>
+            <li>1981 - 26 September 1981.</li>
+        </ul>    
+    </section>
+
+    <section class="card" id="september">
+        <h3>Chart 12: One Day in September</h3>
+          <div id="chart11" class="hc" style="margin-bottom:18px;"></div>
+          <p>This chart shows when the grand final gets played during the year. 
+          <p>There are two major outlier dates for grand finals in this timeframe:</p>
+          <ul>
+            <li>2000 - The season schedule and subsequent finals was early than usual to avoid a clash with the 2000 Summer Olympics, held in Sydney, Australia.
+                <ul>
+                    <li>This is also the only time in this timeframe that a September grand final was NOT played on the last Saturday of September.</li>
+                </ul>
+            </li>
+            <li>2020 - The season was impacted by COVID-19. Restrictions, player bubbles and a reduced season pushed the season and grand final back.</li>
+          </ul>
+    </section>
+
+    <section class="card two-col" id="gfdates">
+    <div class="table-card">
+        <h3>Table 17: Grand Final dates</h3>
+        <table id="tblGFDates" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Premier</th>
+            <th>Score</th>
+            <th>Runner-up</th>
+            <th>Date</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+        <button id="btnGFDatesToggle" class="btn-toggle" type="button">Show more</button>
+    </div>
+
+    <div class="table-card">
+        <h3>Table 18: Grand Final totals</h3>
+        <table id="tblGFTotals" class="afl-table">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Premier</th>
+            <th>Runner-up</th>
+            <th>Total Score</th>
+            <th>Date</th>
+            <th>Party in Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        </table>
+        <button id="btnGFTotalsToggle" class="btn-toggle" type="button">Show more</button>
+    </div>
+    </section>
+
+    <section class="card" id="interest">
+        <h2>Items of interest</h2>
+        <p>Since the competition has broadened from its Victorian roots:</p>
+        <ul>
+            <li>1981 - South Melbourne makes the decision to play all 1982 home games in Sydney, New South Wales.</li>
+            <li>1982 - In June, South Melbourne was dropped from the team name, becoming "the Swans" for the rest of the season.</li>
+            <li>1983 - The Swans were renamed the Sydney Swans.</li>
+            <li>1991 - First Grand Final appearance from a Non-Victorian team, West Coast Eagles.</li>
+            <li>1991 - First Grand Final appearance from a Western Australian team, West Coast Eagles.</li>
+            <li>1991 - First Grand Final Runner-up from outside of Victoria, West Coast Eagles.</li>
+            <li>1991 - First Grand Final Runner-up from a western Western Australian team, West Coast Eagles.</li>
+            <li>1992 - First Grand Final Premier from outside of Victoria, West Coast Eagles.</li>
+            <li>1992 - First Grand Final Premier from Western Australia, West Coast Eagles.</li>
+            <li>1996 - Brisbane Bears and Fitzroy Lions merge to become the Brisbane Lions.</li>
+            <li>1996 - First Grand Final appearance from New South Wales, Sydney Swans.</li>
+            <li>1996 - First Grand Final Runner-up from New South Wales, Sydney Swans.</li>
+            <li>1997 - First Grand Final appearance from South Australia, Adelaide Crows.</li>
+            <li>1997 - First Grand Final Premier from South Australia, Adelaide Crows.</li>
+            <li>2001 - First Grand Final appearance from Queensland, Brisbane Lions.</li>
+            <li>2001 - First Grand Final Premier from Queensland, Brisbane Lions.</li>
+            <li>2004 - First Grand Final without a Victorian team, Port Adelaide Power and Brisbane Lions.</li>
+            <li>2005 - First Grand Final Premier from New South Wales, Sydney Swans</li>
+        </ul>
+        <p>As of 27 September 2025, the following Non-Victorian teams have not made a grand final appearance:</p>
+        <ul>
+            <li>Fremantle Dockers, Western Australia</li>
+            <li>Gold Coast Suns, Queensland</li>
+            <li>Greater Western Sydney Giants, New South Wales</li>
+        </ul>
+    </section>
+
+    <section class="card" id="sources">
+        <h2>Sources</h2>
+        <h3>VFL/AFL Sources</h3>
+        <ul>
+            <li>AFL Premiership Winner - <a href="https://www.afl.com.au/stats/premiership-winners">https://www.afl.com.au/stats/premiership-winners</a></li>
+            <li>List of VFL/AFL Premiers- <a href="https://en.wikipedia.org/wiki/List_of_VFL/AFL_premiers" target="_blank">https://en.wikipedia.org/wiki/List_of_VFL/AFL_premiers</a></li>
+            <li>One Day in September (Song) - <a href="https://en.wikipedia.org/wiki/One_Day_in_September_(song)" target="_blank">https://en.wikipedia.org/wiki/One_Day_in_September_(song)</a></li>                                
+        </ul>
+        <h3>Victorian Government data</h3>
+        <ul>
+            <li>List of Premiers of Victoria - <a href="https://en.wikipedia.org/wiki/List_of_premiers_of_Victoria" target="_blank">https://en.wikipedia.org/wiki/List_of_premiers_of_Victoria</a></li>
+        </ul>
+        <h3>Census data</h3>
+        <ul>
+            <li>Victoria, 1991 - <a href="https://www.ausstats.abs.gov.au/ausstats/free.nsf/0/3585CA25F44B73B6CA2574BE00835F50/$File/27102_1991_90_Census_Characteristics_of_Victoria.pdf" target="_blank">https://www.ausstats.abs.gov.au/ausstats/free.nsf/0/3585CA25F44B73B6CA2574BE00835F50/$File/27102_1991_90_Census_Characteristics_of_Victoria.pdf</a></li>
+            <li>Victoria, 1996 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/1996/2/download/BCP_2.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/1996/2/download/BCP_2.xlsx</a></li>
+            <li>Victoria, 2001 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/2001/2/download/BCP_2.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/2001/2/download/BCP_2.xlsx</a></li>
+            <li>Victoria, 2006 - <a href="https://abs.gov.au/census/find-census-data/community-profiles/2006/2/download/BCP_2.xlsx" target="_blank">https://abs.gov.au/census/find-census-data/community-profiles/2006/2/download/BCP_2.xlsx</a></li>
+            <li>Victoria, 2011 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/2011/2/download/BCP_2.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/2011/2/download/BCP_2.xlsx</a></li>
+            <li>Victoria, 2016 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/2016/2/download/GCP_2.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/2016/2/download/GCP_2.xlsx</a></li>
+            <li>Victoria, 2021 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/2021/2/download/GCP_2.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/2021/2/download/GCP_2.xlsx</a></li>
+            <li>Australia, 1986 - <a href="https://www.ausstats.abs.gov.au/ausstats/free.nsf/0/804F27A83754B481CA2574D500165929/$File/25100_1986_Religion_in_Australia.pdf" target="_blank">https://www.ausstats.abs.gov.au/ausstats/free.nsf/0/804F27A83754B481CA2574D500165929/$File/25100_1986_Religion_in_Australia.pdf</a></li>
+            <li>Australia, 1991 - <a href="https://www.ausstats.abs.gov.au/ausstats/free.nsf/0/792BBD9457634FFECA2574BE00826627/$File/27100_1991_20_Census_Characteristics_of_Australia.pdf" target="_blank">https://www.ausstats.abs.gov.au/ausstats/free.nsf/0/792BBD9457634FFECA2574BE00826627/$File/27100_1991_20_Census_Characteristics_of_Australia.pdf</a></li>
+            <li>Australia, 1996 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/1996/0/download/BCP_0.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/1996/0/download/BCP_0.xlsx</a></li>
+            <li>Australia, 2001 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/2001/0/download/BCP_0.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/2001/0/download/BCP_0.xlsx</a></li>
+            <li>Australia, 2006 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/2006/0/download/BCP_0.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/2006/0/download/BCP_0.xlsx</a></li>
+            <li>Australia, 2011 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/2011/0/download/BCP_0.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/2011/0/download/BCP_0.xlsx</a></li>
+            <li>Australia, 2016 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/2016/0/download/GCP_0.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/2016/0/download/GCP_0.xlsx</a></li>
+            <li>Australia, 2021 - <a href="https://www.abs.gov.au/census/find-census-data/community-profiles/2021/AUS/download/GCP_AUS.xlsx" target="_blank">https://www.abs.gov.au/census/find-census-data/community-profiles/2021/AUS/download/GCP_AUS.xlsx</a></li>  
+        </ul>
+    </section>
+
+  </main>
+</body>
+</html>
