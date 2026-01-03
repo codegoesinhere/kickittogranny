@@ -68,3 +68,31 @@ table{font-size:.75em}
 .highcharts-legend-item text{fill:var(--ink)!important}
 .highcharts-grid-line{stroke:#24313d}
 .highcharts-tick{stroke:#24313d}
+
+/* =========================
+   MOBILE: HORIZONTAL SCROLL FOR WIDE TABLES
+   (Tables 7, 8, 17, 18)
+   ========================= */
+.table-card{min-width:0} /* allows overflow scrolling inside grid items */
+
+@media (max-width:700px){
+  /* Make only these wide tables horizontally scrollable on small screens */
+  #tblClosestMargins,
+  #tblBiggestMargins,
+  #tblGFDates,
+  #tblGFTotals{
+    display:block;
+    width:max-content;
+    min-width:100%;
+    max-width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  #tblClosestMargins th, #tblClosestMargins td,
+  #tblBiggestMargins th, #tblBiggestMargins td,
+  #tblGFDates th,       #tblGFDates td,
+  #tblGFTotals th,      #tblGFTotals td{
+    white-space:nowrap;
+  }
+}
