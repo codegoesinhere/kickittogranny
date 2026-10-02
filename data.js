@@ -38,7 +38,8 @@ const vicPremiers = [
   { start:'2010-12-02', end:'2013-03-06', surname:'Baillieu', party:'Coalition',supports:'Geelong' },
   { start:'2013-03-06', end:'2014-12-04', surname:'Napthine', party:'Coalition',supports:'Geelong' },
   { start:'2014-12-04', end:'2023-09-27', surname:'Andrews',  party:'Labor',    supports:'Essendon' },
-  { start:'2023-09-27', end:'2100-01-01', surname:'Allan',    party:'Labor',    supports:'' } // unknown
+  { start:'2023-09-27', end:'2026-07-28', surname:'Allan',    party:'Labor',    supports:'' }, // unknown
+  { start:'2026-07-28', end:'2100-01-01', surname:'Carroll',  party:'Labor',    supports:'North Melbourne' }
 ];
 
 
@@ -89,7 +90,8 @@ const grandFinals = [
   { year: 2022, date: "2022-09-25", location: "MCG", winner: "Geelong", loser: "Sydney", wState: "VIC", lState: "NSW", wGoals: 20, wBehinds: 13, wScore: 133, lGoals: 8, lBehinds: 4, lScore: 52, wLDiff: 81 },
   { year: 2023, date: "2023-09-30", location: "MCG", winner: "Collingwood", loser: "Brisbane", wState: "VIC", lState: "QLD", wGoals: 12, wBehinds: 18, wScore: 90, lGoals: 13, lBehinds: 8, lScore: 86, wLDiff: 4 },
   { year: 2024, date: "2024-09-28", location: "MCG", winner: "Brisbane", loser: "Sydney", wState: "QLD", lState: "NSW", wGoals: 18, wBehinds: 12, wScore: 120, lGoals: 9, lBehinds: 6, lScore: 60, wLDiff: 60 },
-  { year: 2025, date: "2025-09-27", location: "MCG", winner: "Brisbane", loser: "Geelong", wState: "QLD", lState: "VIC", wGoals: 18, wBehinds: 14, wScore: 122, lGoals: 11, lBehinds: 9, lScore: 75, wLDiff: 47 }
+  { year: 2025, date: "2025-09-27", location: "MCG", winner: "Brisbane", loser: "Geelong", wState: "QLD", lState: "VIC", wGoals: 18, wBehinds: 14, wScore: 122, lGoals: 11, lBehinds: 9, lScore: 75, wLDiff: 47 },
+  { year: 2026, date: "2026-09-26", location: "MCG", winner: "Brisbane", loser: "Fremantle", wState: "QLD", lState: "WA", wGoals: 14, wBehinds: 12, wScore: 96, lGoals: 12, lBehinds: 17, lScore: 89, wLDiff: 7 }
 ];
 
 /*  3) Census data for religions across the 82 to current window */
